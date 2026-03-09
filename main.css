@@ -447,6 +447,26 @@ button {
   background: #fff;
 }
 
+.conti {
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  justify-content: center;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+}
+
 /* shorts-pc */
 .short {
   margin-top: 80px;
