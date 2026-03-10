@@ -108,6 +108,27 @@ header {
   object-fit: cover;
 }
 
+.joohong {
+  display: flex;
+  justify-content: center;
+}
+
+.콘티주홍 {
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+}
+
+.backimage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 #profile {
   margin-top: 80px;
 }
