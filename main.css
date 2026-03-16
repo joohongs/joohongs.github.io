@@ -118,6 +118,11 @@ header {
   justify-content: center;
 }
 
+.빼꼼주홍 {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .background {
   display: flex;
   justify-content: center;
