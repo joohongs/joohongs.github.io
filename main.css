@@ -5,6 +5,8 @@
 /* font-family: "Pretendard Variable", sans-serif; */
 /* Prata */
 /* font-family: "Prata", serif; */
+/* jolly */
+/* font-family: "Jolly Lodger", system-ui; */
 
 /* 초기화 */
 * {
@@ -22,6 +24,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  position: relative;
   font-family: 'Pretendard Variable', sans-serif;
   font-size: 1.6rem;
   line-height: 1.6;
@@ -52,13 +55,15 @@ a:active {
 
 /* header */
 header {
-  position: fixed;
+  /* position: fixed;
   z-index: 9999;
   top: 0;
+  left: 0; */
+  position: absolute;
   left: 0;
+  top: 0;
+  z-index: 9999;
   width: 100%;
-  background-color: #333;
-  border-bottom: 1px solid #ccc;
 }
 .header-inner {
   display: flex;
@@ -78,6 +83,7 @@ header {
 
 .gnb > a {
   margin-left: 40px;
+  text-shadow: 1px 1px 3px #dd510f;
 }
 .section-title {
   font-family: 'Prata', serif;
@@ -98,7 +104,22 @@ header {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  background-image: url(/img/노랑데이션.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* 노랑데이션 내리는 부분 */
+  background-position: top -320px left 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
+#main-visual img {
+  /* 메인 문구 크기 조절 */
+  width: 60%;
+  /* 메인 문구 높이 조절 */
+  padding-top: 200px;
+}
+
 #main-visual > video {
   position: absolute;
   top: 0;
@@ -134,13 +155,21 @@ header {
   gap: 10px;
 }
 
-#profile {
+#about {
   margin-top: 80px;
+}
+.introduce img {
+  margin: 0 auto;
+}
+.about-wrap {
+  justify-content: center;
+  margin: 0 auto;
 }
 .about-inner {
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  width: 800px;
+  margin: 50px auto;
+  gap: 20px;
 }
 .ab-img-wrap {
   display: flex;
@@ -153,14 +182,23 @@ header {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  /* 사진을 원형으로 만들기 위한 코드, 사각형으로 하려면 삭제 */
-  border-radius: 50%;
+}
+.ab-skill-list > li {
+  margin-bottom: 20px;
+}
+.ab-skill-list > li :last-child {
+  margin-bottom: 0;
+}
+.ab-skill-list .skill-icon {
+  width: 50px;
 }
 .ab-text-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 10rem;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
+  /* text-align: center; */
 }
 .ab-text-wrap > h4 {
   font-size: 3.6rem;
@@ -171,18 +209,32 @@ header {
   font-weight: 500;
 }
 .ab-text-wrap > h5 {
-  margin: 60px 0px;
+  margin-bottom: 20px;
 }
 
 /* skill */
 #skill {
   margin: 160px auto;
 }
+.skill {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 #skill > ul {
   display: flex;
   justify-content: space-around;
   text-align: center;
 }
+.skill {
+  position: relative;
+}
+.skill ::before {
+  content: url(img/ㄱ.\ 물구나무-주홍.gif);
+  left: 0;
+  top: 0;
+}
+
 #skill h4 {
   font-weight: 700;
   margin-bottom: 32px;
@@ -479,11 +531,6 @@ button {
 }
 
 .contact {
-  display: flex;
-  justify-content: center;
-}
-
-.skill {
   display: flex;
   justify-content: center;
 }
