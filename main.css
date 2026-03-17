@@ -192,6 +192,7 @@ header {
 .ab-skill-list .skill-icon {
   width: 50px;
 }
+
 .ab-text-wrap {
   display: flex;
   flex-direction: column;
