@@ -121,7 +121,7 @@ header {
 }
 #main-visual img:last-child {
   position: absolute;
-  width: 500px;
+  width: 1500px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -260,7 +260,7 @@ header {
   position: relative;
 }
 .skill ::before {
-  content: url(img/ㄱ.\ 물구나무-주홍.gif);
+  content: url(img/1.\ handstand\ J.gif);
   left: 0;
   top: 0;
 }
@@ -751,9 +751,9 @@ footer {
 
 /* 특정 스크롤 값에서 맨위로가기 버튼이 보였다 안보였다 설정 디자인 */
 .btn-top {
-  color: #111;
+  color: #ff8800;
   position: fixed;
-  width: 40px;
+  width: 50px;
   right: 60px;
   bottom: 120px;
   opacity: 0;
