@@ -5,13 +5,13 @@ $(function () {
       e.preventDefault(); // a 태그 기본 동작 방지
 
       // 클릭한 시점의 각 섹션 ID 배열
-      let sections = ['#profile', '#skill', '#work', '#contact'];
+      let sections = ['#about', '#skill', '#conti', '#backgroundDesign', '#video', '#shorts', '#contact'];
 
       // 해당 섹션의 현재 위치를 실시간으로 파악
       let targetTop = $(sections[index]).offset().top;
 
       // Contact 섹션만 예외 처리가 필요하다면 조건문 추가
-      let offsetValue = sections[index] === '#contact' ? 0 : 100;
+      let offsetValue = sections[index] === '#contact' ? 0 : 0;
 
       $('html,body')
         .stop()
