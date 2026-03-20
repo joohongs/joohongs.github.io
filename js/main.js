@@ -93,10 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 2. 메뉴가 열렸는지(active) 확인 후 이미지 경로(src) 변경
       if (gnb.classList.contains('active')) {
-        hamburgerImg.src = 'img/B. right arrow.png'; // 닫기(X) 이미지 경로
+        hamburgerImg.src = 'img/potato_x.png'; // 닫기(X) 이미지 경로
         hamburgerImg.alt = '메뉴 닫기';
       } else {
-        hamburgerImg.src = 'img/B. left arrow.png'; // 원래 햄버거 이미지 경로
+        hamburgerImg.src = 'img/burger_menu.png'; // 원래 햄버거 이미지 경로
         hamburgerImg.alt = '메뉴 열기';
       }
     });
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
           gnb.classList.remove('active');
 
           // 3. 링크를 눌러서 메뉴가 닫힐 때도 원래 햄버거 이미지로 복구
-          hamburgerImg.src = 'img/hamburger.png';
+          hamburgerImg.src = 'img/burger_menu.png';
           hamburgerImg.alt = '메뉴 열기';
         }
       });
@@ -243,7 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.pointerEvents = 'none';
           }
 
-          if (card.classList.contains('active') || card.classList.contains('prev-card') || card.classList.contains('next-card')) {
+          if (
+            card.classList.contains('active') ||
+            card.classList.contains('prev-card') ||
+            card.classList.contains('next-card')
+          ) {
             card.style.opacity = '';
             card.style.pointerEvents = '';
           }
