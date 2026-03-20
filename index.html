@@ -33,14 +33,27 @@
           <a href="#">
           </a>
         </h1>
+        <button class="hamburger-btn">
+          <img src="img/B. left arrow.png" alt="메뉴 열기" width="30px" />
+        </button>
         <nav class="gnb">
-          <a href="#">about</a>
-          <a href="#">skill</a>
-          <a href="#">conti</a>
-          <a href="#">background design</a>
-          <a href="#">video</a>
-          <a href="#">contact</a>
-        </nav>
+          <ul class="main-menu">
+            <li><a href="#about">about</a></li>
+            <li><a href="#skill">skill</a></li>
+            <li><a href="#conti">conti</a></li>
+            <li><a href="#backgroundDesign">background design</a></li>
+            
+            <li class="has-submenu">
+              <a href="#" class="submenu-toggle">video</a>
+              <ul class="sub-menu">
+                <li><a href="#video">long</a></li>
+                <li><a href="#shorts">short</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="#contact">contact</a></li>
+          </ul>
+    </nav>
       </div>
     </header>
 

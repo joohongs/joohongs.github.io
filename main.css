@@ -38,11 +38,7 @@ iframe {
 }
 
 a {
-  color: #ffffcc;
   text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 600;
-  transition: 300ms;
 }
 
 a:hover,
@@ -95,9 +91,57 @@ header {
   width: 100%;
 }
 
-.gnb > a {
-  margin-left: 40px;
+/* ==========================================================================
+   2-1. 네비게이션 (Navigation)
+   ========================================================================== */
+/* 메인 메뉴 가로 정렬 */
+.gnb .main-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.gnb .main-menu a {
+  color: #ffffcc;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transition: 300ms;
   text-shadow: 1px 1px 3px #dd510f;
+}
+
+/* 하위 메뉴를 품고 있는 부모 li에 기준점 설정 */
+.gnb .has-submenu {
+  position: relative;
+}
+
+/* 하위 메뉴(shorts) 기본 숨김 세팅 */
+.gnb .sub-menu {
+  display: none; /* 평소에는 안 보이게 숨김 */
+  position: absolute;
+  top: 100%; /* 부모 메뉴의 바로 아래에 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 0;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* 부모 메뉴(video)에 마우스를 올렸을 때 하위 메뉴 나타나기 */
+.gnb .has-submenu:hover .sub-menu {
+  display: block;
+}
+
+/* 하위 메뉴 링크 디자인 */
+.gnb .sub-menu a {
+  display: block;
+  padding: 5px 15px;
+}
+
+.hamburger-btn {
+  display: none; /* PC에서는 숨김 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
 }
 
 /* ==========================================================================
@@ -813,6 +857,7 @@ footer {
   bottom: 120px;
   opacity: 0;
   transition: 0.5s;
+  z-index: 999;
 }
 
 .btn-top img {
@@ -952,10 +997,85 @@ footer {
     width: initial;
     padding: 8px 18px;
   }
-  .gnb > a {
-    font-size: 1.4rem;
-    margin-left: 10px;
+  /* 1. 헤더 상단 고정 */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* 가장 위에 오도록 설정 */
   }
+
+  /* 햄버거 버튼 보이기 */
+  .hamburger-btn {
+    display: block;
+    position: absolute;
+    right: 10px; /* 우측 여백 */
+    top: 15px; /* 상단 여백 (로고 위치에 맞춰 조절하세요) */
+  }
+
+  /* 네비게이션을 전체 화면 덮개 형태로 변경 */
+  .gnb {
+    display: none; /* 평소에는 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95); /* 반투명 배경 */
+    z-index: 99; /* 햄버거 버튼(100)보다 한 칸 아래 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* JS에서 'active' 클래스를 붙였을 때 나타남 */
+  .gnb.active {
+    display: flex;
+  }
+
+  /* 메뉴 세로 정렬 및 글자 크기 키우기 */
+  .gnb .main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.5rem;
+    text-shadow: none;
+    text-align: center;
+  }
+  .gnb .main-menu a {
+    color: #dd510f;
+    text-shadow: none;
+    font-weight: bold;
+  }
+  .gnb .sub-menu {
+    display: block; /* 숨겨져 있던 메뉴를 강제로 꺼내기 */
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  /* 하위 메뉴 글자 크기와 간격 살짝 조정 */
+  .gnb .sub-menu li a {
+    font-weight: 500;
+  }
+  .gnb .sub-menu li a {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+  }
+  .gnb .sub-menu li:last-child a {
+    margin-bottom: 0; /* 마지막 메뉴는 아래 여백 제거 */
+  }
+
+  /* 모바일에서는 'video' 글자를 눌러도 토글이 작동하지 않도록 클릭 방지 */
+  .submenu-toggle {
+    pointer-events: none;
+    font-weight: bold; /* 상위 카테고리라는 느낌을 주기 위해 굵게 처리 */
+  }
+
   #main-visual > video {
     top: 46px;
   }
@@ -1143,4 +1263,16 @@ footer {
     right: 20px;
     bottom: 60px;
   }
+}
+
+/* PC (마우스)에서는 호버 시 나타남 */
+@media (hover: hover) and (pointer: fine) {
+  .gnb .has-submenu:hover .sub-menu {
+    display: block;
+  }
+}
+
+/* 모바일 (터치)에서는 open 클래스가 추가되면 나타남 */
+.gnb .has-submenu.open .sub-menu {
+  display: block;
 }
