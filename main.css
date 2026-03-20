@@ -430,13 +430,13 @@ header {
 .img-indicator .dot {
   width: 6px;
   height: 6px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .img-indicator .dot.active {
-  background: #fff;
+  background: #333;
 }
 
 /* ==========================================================================
@@ -707,8 +707,8 @@ button {
   transform: translateY(-50%);
   z-index: 10;
   background: none;
-  width: 50px;
-  height: 50px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -718,8 +718,13 @@ button {
   border: none;
 }
 
-.short-btn:hover {
-  background: rgba(0, 0, 0, 0.4);
+.short-btn img {
+  width: 100%;
+  transition: 0.3s;
+}
+
+.short-btn img:hover {
+  transform: scale(1.1);
 }
 
 .short .prev-btn {
