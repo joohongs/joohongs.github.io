@@ -151,7 +151,7 @@ header {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-image: url(img/0.yellowdient.png);
+  background-image: url(img/yellowdient.png);
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
@@ -671,9 +671,20 @@ button {
   cursor: pointer;
 }
 
+.popcorn {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* ==========================================================================
-   9. 쇼츠 섹션 (Shorts)
+    9. 쇼츠 섹션 (Shorts)
    ========================================================================== */
+
+.shortform1 {
+  display: flex;
+  justify-content: center;
+}
+
 .short {
   margin-top: 80px;
   width: 100%;
