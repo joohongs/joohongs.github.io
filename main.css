@@ -277,11 +277,13 @@ header {
 .ab-text-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 400px;
+  align-items: flex-start;
+  width: 50%;
   margin: 0 auto;
 }
-
+.ab-text-wrap li {
+  font-size: 2.4rem;
+}
 .ab-text-wrap > h4 {
   font-size: 3.6rem;
   font-weight: 700;
@@ -494,10 +496,27 @@ header {
    7. 배경 디자인 섹션 (Background Design)
    ========================================================================== */
 #backgroundDesign {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#backgroundDesign .section-title {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#backgroundDesign .section-title img:first-child {
+  width: 100%;
+}
+.snapJ {
+  width: 230px;
+  position: absolute;
+  left: -400px;
+  top: 50vh;
 }
 
 .backimage-list {
@@ -521,10 +540,22 @@ header {
    8. 비디오 섹션 (Video - Card Slider)
    ========================================================================== */
 #video {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.popcorn {
+  width: 230px;
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+}
+
+.popcorn img {
+  width: 100%;
 }
 
 :root {
@@ -921,14 +952,18 @@ footer {
   #about {
     margin-top: calc((100vw * 9 / 16) + 80px);
   }
+  .about-inner,
+  .ab-text-wrap {
+    min-width: 600px;
+  }
   .ab-img-wrap {
     width: 40%;
   }
   .ab-img-wrap > img {
     width: 100%;
   }
-  .ab-text-wrap {
-    padding-left: 6rem;
+  .ab-text-wrap ul li {
+    font-size: 2.3rem;
   }
   .ab-text-wrap > h4 {
     font-size: 2.8rem;
@@ -942,6 +977,21 @@ footer {
   #skill h4 > strong {
     font-size: 2.2rem;
   }
+  /* .snapJ {
+    position: absolute;
+    left: -400px;
+    top: -200px;
+  } */
+  .snapJ {
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -120px;
+  }
+  .snapJ img {
+    width: 100%;
+  }
   :root {
     --card-width: 420px;
   }
@@ -951,6 +1001,18 @@ footer {
   .card-detail > ul {
     margin: 20px 0px;
   }
+  .popcorn {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+  }
+
+  .popcorn img {
+    width: 100%;
+  }
+
   .img-slider-wrap {
     width: 680px;
   }
@@ -1093,10 +1155,12 @@ footer {
     pointer-events: none;
     font-weight: bold; /* 상위 카테고리라는 느낌을 주기 위해 굵게 처리 */
   }
-
-  #main-visual > video {
-    top: 46px;
+  /* 모바일 메인비주얼 폰트 위치와 크기 */
+  #main-visual img:first-child {
+    width: 70%;
+    padding-top: 60px;
   }
+
   .section-title {
     font-size: 2.6rem;
     font-weight: 600;
@@ -1110,13 +1174,15 @@ footer {
   #about {
     height: auto;
     text-align: center;
+    /* 메인비주얼과 어바웃 사이 간격 */
+    margin-top: 40px;
   }
   .joohong {
-    width: 200px;
+    width: 150px;
   }
   .about-inner {
     display: block;
-    width: 90%;
+    width: 95%;
   }
   .ab-img-wrap {
     width: 70%;
@@ -1124,21 +1190,26 @@ footer {
   }
   .ab-text-wrap {
     width: 80%;
-    padding-left: 0;
-    margin: 28px auto 0 auto;
+    display: flex;
+    align-items: center;
+    margin: 20px auto 0 auto;
+  }
+  .ab-text-wrap li {
+    font-size: 1.9rem;
+    word-break: keep-all;
   }
   .ab-text-wrap > h4 {
     font-size: 2.2rem;
   }
   .ab-text-wrap > h5 {
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     margin: 24px 0px;
   }
   .ab-skill-list > li {
     justify-content: center;
   }
   .introduce {
-    width: 60%;
+    width: 80%;
     min-width: 340px;
     margin: 0 auto;
   }
@@ -1191,10 +1262,27 @@ footer {
   .backimage-list > li > img {
     margin-bottom: 20px;
   }
+  .snapJ {
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -120px;
+  }
+  .snapJ img {
+    width: 100%;
+  }
   #video {
     height: auto;
     padding: 10px;
     margin: 100px 0px;
+  }
+  .popcorn {
+    display: none;
+    width: 150px;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
   }
   .slider-container {
     height: 550px;
