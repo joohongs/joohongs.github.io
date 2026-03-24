@@ -227,6 +227,10 @@ header {
   gap: 50px;
 }
 
+.about img {
+  width: 20%;
+}
+
 .ab-img-wrap {
   flex-grow: 1;
   display: flex;
@@ -373,6 +377,10 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.conti img {
+  width: 10%;
 }
 
 .img-slider-wrap {
@@ -1190,6 +1198,18 @@ footer {
     /* 메인비주얼과 어바웃 사이 간격 */
     margin-top: 40px;
   }
+
+  .about {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .about img {
+    width: 100%;
+  }
+
   .joohong {
     width: 150px;
   }
@@ -1250,6 +1270,22 @@ footer {
   .conti-joohong {
     width: 100px;
   }
+
+  .conti {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .conti img {
+    width: 100%;
+  }
+
+  .about img {
+    width: 100%;
+  }
   .img-slider-wrap {
     width: 300px;
     flex-direction: column;
@@ -1272,6 +1308,7 @@ footer {
     height: auto;
     margin: 100px 0px;
   }
+
   .backimage-list {
     width: 100%;
     display: block;
@@ -1280,7 +1317,7 @@ footer {
     margin-bottom: 20px;
   }
   .snapJ {
-    width: 150px;
+    width: 100px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1293,6 +1330,17 @@ footer {
     height: auto;
     padding: 10px;
     margin: 100px 0px;
+  }
+
+  .section-title {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .section-title img {
+    width: 100%;
   }
   .popcorn {
     display: none;
