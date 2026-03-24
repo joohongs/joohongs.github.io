@@ -118,16 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================
-  // 3. Top 버튼 관련 기능
+  // 3. Top 버튼 관련 기능 & 헤더 사이드 메뉴 변환
   // =========================================================
   const btnTop = document.querySelector('.btn-top');
+  const header = document.querySelector('header'); // 헤더 선택자 추가
+
   if (btnTop) {
     btnTop.addEventListener('click', (e) => {
       e.preventDefault();
       smoothScroll(0, 500);
     });
+
     window.addEventListener('scroll', () => {
-      btnTop.classList.toggle('show', window.pageYOffset >= 500);
+      const isScrolled = window.pageYOffset >= 500;
+
+      // Top 버튼 표시
+      btnTop.classList.toggle('show', isScrolled);
+
+      // 스크롤 시 헤더에 'header-side' 클래스 추가/제거
+      if (header) {
+        header.classList.toggle('header-side', isScrolled);
+      }
     });
   }
 
@@ -243,11 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.pointerEvents = 'none';
           }
 
-          if (
-            card.classList.contains('active') ||
-            card.classList.contains('prev-card') ||
-            card.classList.contains('next-card')
-          ) {
+          if (card.classList.contains('active') || card.classList.contains('prev-card') || card.classList.contains('next-card')) {
             card.style.opacity = '';
             card.style.pointerEvents = '';
           }

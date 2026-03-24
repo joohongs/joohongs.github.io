@@ -1382,3 +1382,90 @@ footer {
 .gnb .has-submenu.open .sub-menu {
   display: block;
 }
+
+/* ==========================================================================
+   헤더 스크롤 사이드 메뉴 변환 (PC 전용)
+   ========================================================================== */
+@media screen and (min-width: 1200px) {
+  /* 스크롤 500px 이상 시 추가되는 클래스 */
+  header.header-side {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    left: auto;
+    width: auto;
+    transform: translateY(-50%);
+    background-color: #ffc000;
+    padding: 30px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* 사이드 메뉴 내부 레이아웃 세로 정렬 */
+  header.header-side .header-inner {
+    width: auto;
+    flex-direction: column;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* 네비게이션 메뉴 세로 배치 */
+  header.header-side .gnb .main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center; /* <--- 이 줄을 추가해서 넓어진 상자 안에서도 가운데 정렬 유지 */
+    width: 100%; /* <--- 전체 폭을 쓰도록 안전하게 100% 추가 */
+  }
+
+  /* li 안의 a 태그들도 넓어진 폭 안에서 꽉 차게 설정 (선택 사항) */
+  header.header-side .gnb .main-menu > li {
+    width: 100%;
+  }
+
+  header.header-side .header-inner a {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  header.header-side .header-inner a span {
+    display: block;
+  }
+
+  /* 사이드 메뉴 변환 시 로고 숨김 (선택 사항) */
+  header.header-side .logo {
+    display: none;
+  }
+
+  /* 네비게이션 메뉴 세로 배치 */
+  header.header-side .gnb .main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* 하위 메뉴가 공간을 차지하지 않고 왼쪽 옆으로 팝업되도록 수정 */
+  header.header-side .gnb .sub-menu {
+    position: absolute;
+    top: -10px; /* 'video' 글자 높이와 비슷하게 맞춤 */
+    left: -120px; /* 사이드 메뉴 박스 왼쪽 바깥으로 튀어나오게 설정 */
+    transform: none;
+    padding: 15px;
+    background-color: #ff8800; /* 글씨가 배경에 묻히지 않게 흰색 바탕 추가 */
+    border-radius: 15px;
+    box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 100px;
+  }
+  /* 서브 메뉴와 부모 메뉴 사이에 투명한 연결 고리 생성 */
+  header.header-side .gnb .sub-menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px; /* 부모 메뉴 방향으로 뻗는 길이 */
+    width: 50px; /* 마우스가 떨어지지 않게 덮어주는 투명 영역 */
+    height: 100%;
+  }
+}
