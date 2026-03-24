@@ -310,10 +310,16 @@ header {
 }
 
 .skill {
+  width: 150px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-bottom: 50px;
   overflow: hidden;
+}
+
+.skill img {
+  width: 100%;
 }
 
 .skill-char {
@@ -1224,6 +1230,10 @@ footer {
     height: auto;
     margin: 100px 0px;
   }
+  .skill {
+    width: 100px;
+  }
+
   #skill h4 {
     margin-bottom: 16px;
   }
