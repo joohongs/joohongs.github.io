@@ -84,7 +84,7 @@ header {
 
 .logo {
   align-self: center;
-  width: 65px;
+  width: 45px;
 }
 
 .logo > a > img {
@@ -1084,12 +1084,19 @@ footer {
     left: 0;
     width: 100%;
     z-index: 9999; /* 가장 위에 오도록 설정 */
+    background-color: #ffffcc;
+    box-shadow: 1px 0 7px #aaa;
+  }
+  .logo {
+    width: 40px;
+    padding-left: 10px;
   }
 
   /* 햄버거 버튼 보이기 */
   .hamburger-btn {
     display: block;
-    position: absolute;
+    /* position: absolute; */
+    padding: 0;
     right: 10px; /* 우측 여백 */
     top: 15px; /* 상단 여백 (로고 위치에 맞춰 조절하세요) */
   }
