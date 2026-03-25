@@ -732,9 +732,14 @@ button {
     9. 쇼츠 섹션 (Shorts)
    ========================================================================== */
 
-.shortform1 {
+.shortform {
+  width: 280px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+}
+.shortform img {
+  width: 100%;
 }
 
 .short {
@@ -1180,7 +1185,7 @@ footer {
   }
   /* 모바일 메인비주얼 폰트 위치와 크기 */
   #main-visual img:first-child {
-    width: 70%;
+    width: 77%;
     padding-top: 60px;
   }
 
@@ -1213,7 +1218,7 @@ footer {
   }
 
   .joohong {
-    width: 150px;
+    width: 140px;
   }
   .about-inner {
     display: block;
@@ -1377,6 +1382,9 @@ footer {
     padding: 0;
     margin-top: 40px;
   }
+  .shortform {
+    width: 200px;
+  }
   .short-btn {
     display: none;
   }
@@ -1428,7 +1436,7 @@ footer {
     width: 100%;
   }
   .contact {
-    width: 210px;
+    width: 240px;
   }
   .bbea-ju {
     position: absolute;
