@@ -115,32 +115,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  }
+  } // 3. Top 버튼 관련 기능 & 헤더 스크롤/리사이즈 이벤트
+  // =========================================================
 
   // =========================================================
-  // 3. Top 버튼 관련 기능 & 헤더 사이드 메뉴 변환
-  // =========================================================
   const btnTop = document.querySelector('.btn-top');
-  const header = document.querySelector('header'); // 헤더 선택자 추가
+  const header = document.querySelector('header');
 
   if (btnTop) {
     btnTop.addEventListener('click', (e) => {
       e.preventDefault();
       smoothScroll(0, 500);
     });
+  } // 헤더와 Top 버튼의 상태를 업데이트하는 통합 함수
 
-    window.addEventListener('scroll', () => {
-      const isScrolled = window.pageYOffset >= 500;
+  function updateUIState() {
+    const scrollY = window.pageYOffset;
+    const isScrolled500 = scrollY >= 500; // Top 버튼 표시 여부
+    if (btnTop) {
+      btnTop.classList.toggle('show', isScrolled500);
+    }
+    if (header) {
+      // 기존 로직: 스크롤 500 이상일 때 클래스 토글
+      header.classList.toggle('header-side', isScrolled500); // --- 모바일 헤더 배경색 & 그림자 제어 ---
 
-      // Top 버튼 표시
-      btnTop.classList.toggle('show', isScrolled);
+      if (window.innerWidth <= 767) {
+        header.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
-      // 스크롤 시 헤더에 'header-side' 클래스 추가/제거
-      if (header) {
-        header.classList.toggle('header-side', isScrolled);
+        if (scrollY > 0) {
+          // 스크롤이 내려갔을 때
+          header.style.backgroundColor = '#ffffcc';
+          header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+          header.style.borderBottom = '1px solid #ccc';
+        } else {
+          // 맨 위일 때
+          header.style.backgroundColor = 'transparent';
+          header.style.boxShadow = 'none';
+          header.style.borderBottom = 'none';
+        }
+      } else {
+        // PC/태블릿 화면일 때는 인라인 스타일 제거하여 CSS 기본값으로 복구
+        header.style.backgroundColor = '';
+        header.style.boxShadow = '';
+        header.style.borderBottom = '';
+        header.style.transition = '';
       }
-    });
-  }
+    }
+  } // 1. 스크롤할 때마다 함수 실행
+
+  window.addEventListener('scroll', updateUIState); // 2. 화면 크기가 변할 때마다 함수 실행 (리사이즈 감지)
+
+  window.addEventListener('resize', updateUIState); // 3. 페이지가 처음 로드될 때 초기 상태 반영을 위해 1회 실행
+
+  updateUIState();
 
   // =========================================================
   // 4. 쇼츠 드래그 및 버튼 스크롤 기능
