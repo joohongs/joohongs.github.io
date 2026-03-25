@@ -363,24 +363,21 @@ header {
 /* ==========================================================================
    6. 콘티 슬라이더 섹션 (Conti)
    ========================================================================== */
-.conti-joohong {
-  display: flex;
-  justify-content: center;
+.conti {
+  position: relative;
   width: 150px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
-.conti-joohong img {
+.conti img:first-child {
   width: 100%;
 }
 
-.conti {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.conti img {
-  width: 10%;
+.conti-joohong {
+  position: absolute;
+  width: 120px;
+  top: -180px;
+  left: 35%;
+  transform: translateX(-50%);
 }
 
 .img-slider-wrap {
@@ -1229,7 +1226,7 @@ footer {
     margin: 0px auto 20px auto;
   }
   .ab-text-wrap {
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     margin: 20px auto 0 auto;
@@ -1274,10 +1271,6 @@ footer {
     width: 50%;
     margin-bottom: 40px;
   }
-  .conti-joohong {
-    width: 100px;
-  }
-
   .conti {
     width: 120px;
     display: flex;
@@ -1285,11 +1278,10 @@ footer {
     margin: 0 auto;
     margin-bottom: 20px;
   }
-
-  .conti img {
-    width: 100%;
+  .conti-joohong {
+    width: 70px;
+    top: -100px;
   }
-
   .about img {
     width: 100%;
   }
