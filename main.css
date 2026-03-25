@@ -874,8 +874,13 @@ button {
 }
 
 .contact {
+  width: 300px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+}
+.contact img {
+  width: 100%;
 }
 
 #contact .contact-list {
@@ -1410,9 +1415,20 @@ footer {
   }
   #contact .contact-list {
     padding: 20px 0;
+    gap: 20px;
+    align-items: center;
   }
   #contact .contact-list li {
-    padding: 5px 0;
+    width: 50px;
+  }
+  #contact .contact-list li:nth-child(2) {
+    width: 40px;
+  }
+  #contact .contact-list li img {
+    width: 100%;
+  }
+  .contact {
+    width: 210px;
   }
   .bbea-ju {
     position: absolute;
