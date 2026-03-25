@@ -1319,6 +1319,7 @@ footer {
   .backimage-list {
     width: 100%;
     display: block;
+    margin-bottom: 0;
   }
   .backimage-list > li > img {
     margin-bottom: 20px;
@@ -1334,7 +1335,7 @@ footer {
   #video {
     height: auto;
     padding: 10px;
-    margin: 100px 0px;
+    margin-bottom: 120px;
   }
 
   .section-title {
@@ -1434,6 +1435,7 @@ footer {
   }
   #contact .contact-list li img {
     width: 100%;
+    padding: 50px 0;
   }
   .contact {
     width: 240px;
@@ -1441,8 +1443,8 @@ footer {
   .bbea-ju {
     position: absolute;
     right: 0;
-    bottom: 50px;
-    width: 80px;
+    bottom: 100px;
+    width: 70px;
     margin: 0 0 0 auto;
   }
   footer {
