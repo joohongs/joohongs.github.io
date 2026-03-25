@@ -1193,7 +1193,7 @@ footer {
     height: auto;
     text-align: center;
     /* 메인비주얼과 어바웃 사이 간격 */
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   .about {
