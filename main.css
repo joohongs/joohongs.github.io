@@ -1003,9 +1003,6 @@ footer {
     transform: translateX(-50%);
     top: -120px;
   }
-  .snapJ img {
-    width: 100%;
-  }
   :root {
     --card-width: 420px;
   }
@@ -1321,11 +1318,9 @@ footer {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -120px;
+    top: -70px;
   }
-  .snapJ img {
-    width: 100%;
-  }
+
   #video {
     height: auto;
     padding: 10px;
@@ -1339,7 +1334,7 @@ footer {
     margin: 0 auto;
   }
 
-  .section-title img {
+  .section-title img:first-child {
     width: 100%;
   }
   .popcorn {
@@ -1414,7 +1409,6 @@ footer {
     margin: 60px 0px;
   }
   #contact .contact-list {
-    display: block;
     padding: 20px 0;
   }
   #contact .contact-list li {
