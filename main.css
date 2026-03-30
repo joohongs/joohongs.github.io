@@ -380,6 +380,33 @@ header {
   transform: translateX(-50%);
 }
 
+.conti-img-list {
+  display: flex;
+  margin: 30px auto 100px auto;
+  width: fit-content; /* 자식 크기만큼만 */
+}
+
+.conti-img-list > li {
+  position: relative;
+  width: 200px;
+  margin-left: -120px; /* 겹치는 정도 조절 */
+  transition: 1s;
+}
+
+.conti-img-list > li:first-child {
+  margin-left: 0;
+}
+
+.conti-img-list > li:hover {
+  transform: translateY(-50px);
+  z-index: 10; /* 호버시 위로 올라오는 효과 옵션 */
+}
+
+.conti-img-list > li > img {
+  width: 100%;
+  display: block;
+}
+
 .img-slider-wrap {
   width: 830px;
   display: flex;
