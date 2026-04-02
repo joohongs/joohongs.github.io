@@ -1397,8 +1397,8 @@ footer {
     margin-bottom: 20px;
   }
   .conti-joohong {
-    width: 70px;
-    top: -100px;
+    width: 65px;
+    top: -89px;
   }
   .about img {
     width: 100%;
@@ -1448,12 +1448,12 @@ footer {
   }
 
   .conti-img-list {
-    width: 100%; /* 부모 너비를 꽉 채움 */
-    overflow-x: auto; /* 가로 스크롤 허용 */
-    padding: 60px 20px; /* 호버/여백 공간 확보 */
+    width: 100%;
+    overflow-x: auto;
+    padding: 50px 20px 0 20px;
     justify-content: center;
-    -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
-    margin: 0 auto 50px auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
   }
   /* 화살표 버튼이 너무 크면 조절 */
   .slider-btn {
@@ -1527,6 +1527,10 @@ footer {
   }
   .card-detail .long-btns > a {
     padding: 0px 12px;
+  }
+  #shorts {
+    height: auto;
+    margin: 100px 0px;
   }
   .short {
     padding: 0;
