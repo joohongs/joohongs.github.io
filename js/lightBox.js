@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* ==========================================================================
+     1. 다중 이미지 슬라이더 라이트박스 기능
+     ========================================================================== */
   const allLists = document.querySelectorAll('.conti-img-list');
   const allSliders = document.querySelectorAll('.img-slider-wrap');
 
@@ -12,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const slideCount = pages.length;
 
-    // 1. Dot 인디케이터 자동 생성
+    // Dot 인디케이터 자동 생성
     if (indicator) {
       indicator.innerHTML = '';
       pages.forEach((_, i) => {
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 2. 슬라이드 이동 함수
+    // 슬라이드 이동 함수
     function goToSlide(index, withTransition = true) {
       if (index < 0) index = slideCount - 1;
       if (index >= slideCount) index = 0;
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
 
-      // [중요] 해당 슬라이더 내의 모든 dot을 찾아서 현재 인덱스만 active 처리
+      // 해당 슬라이더 내의 모든 dot을 찾아서 현재 인덱스만 active 처리
       const dots = sliderWrap.querySelectorAll('.dot');
       dots.forEach((dot, i) => {
         if (i === currentIndex) {
@@ -53,20 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 3. 버튼 이벤트
-    if (nextBtn)
+    // 버튼 이벤트
+    if (nextBtn) {
       nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         goToSlide(currentIndex + 1);
       });
+    }
 
-    if (prevBtn)
+    if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         goToSlide(currentIndex - 1);
       });
+    }
 
-    // 4. 라이트박스 닫기
+    // 슬라이더 라이트박스 닫기
     sliderWrap.addEventListener('click', (e) => {
       if (e.target === sliderWrap) {
         sliderWrap.classList.remove('active');
@@ -74,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 5. 라이트박스 열기 및 인디케이터 강제 초기화
+    // 슬라이더 라이트박스 열기 및 인디케이터 강제 초기화
     if (allLists[sliderIndex]) {
       const listItems = allLists[sliderIndex].querySelectorAll('li');
       listItems.forEach((li) => {
@@ -93,4 +98,34 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  /* ==========================================================================
+     2. 배경 디자인 단일 이미지 라이트박스 기능
+     ========================================================================== */
+  const thumbnails = document.querySelectorAll('.backimage-list img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  // 요소들이 페이지에 존재하는지 확인 후 이벤트 등록 (안전 장치)
+  if (thumbnails.length > 0 && lightbox && lightboxImg) {
+    // 각 썸네일에 클릭 이벤트 추가
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener('click', (e) => {
+        // 클릭한 썸네일의 src와 alt 속성을 가져와 라이트박스 이미지에 적용
+        const targetSrc = e.target.getAttribute('src');
+        const targetAlt = e.target.getAttribute('alt');
+
+        lightboxImg.setAttribute('src', targetSrc);
+        lightboxImg.setAttribute('alt', targetAlt);
+
+        // 화면에 표시
+        lightbox.classList.add('show');
+      });
+    });
+
+    // 라이트박스(검은 배경)를 클릭하면 창이 닫히도록 설정
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+  }
 });
